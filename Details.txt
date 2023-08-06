@@ -1,0 +1,130 @@
+Topics:
+
+  SQLBolt: Online to Learn and Exercise on SQL
+
+  DB, Table, Columns( Specification of the datatypes ), Rows
+
+  Database:
+
+    create DB
+      https://www.w3schools.com/sql/default.asp
+      syntax: CREATE DATABASE databasename;
+
+      Eg: Create Data base for School Management
+
+      CREATE DATABASE school-mgmt;
+
+    SHOW DATABASES;
+    SELECT name FROM sys;
+  
+  Table:
+    create table
+
+      rows(inserted, updated, deleted) ( data ), columns(alter) ( specification of the type of data )
+
+      https://www.w3schools.com/sql/sql_create_table.asp
+
+      CREATE TABLE table_name (
+          column1 datatype,
+          column2 datatype,
+          column3 datatype,
+        ....
+      );
+
+      CREATE TABLE Students (
+        StudentId int,
+        LastName varchar(255),
+        FirstName varchar(255),
+        Class int,
+      );
+
+    ALTER TABLE:
+      statement is used to add, delete, or modify columns in an existing table.
+      ALTER TABLE table_name
+      ADD column_name datatype;
+
+      ALTER TABLE table_name
+      DROP COLUMN column_name;
+
+      ALTER TABLE table_name
+      RENAME COLUMN old_name to new_name;
+
+      ALTER TABLE table_name
+      MODIFY COLUMN column_name datatype;
+
+    CRUD on single Record or Row in a table:
+      CREATE, READ, UPDATE, DELETE
+
+    READ:
+      all data
+        SELECT * FROM movies;
+
+      single column
+        SELECT title FROM movies;
+
+      multiple columns
+        SELECT title, director FROM movies;
+
+      Filtering:
+        where:
+          select movies from year 1995
+          select movies except with ids 1, 5, 8
+          select the movies which contains WALL in titl string
+
+      Sorting:
+        order by:
+          select * from movies order by Title asc/desc;
+        limit:
+          order and limit the enteries
+        offset:
+          where to start the limit count
+
+        distinct:
+          without duplicate
+          list all directors in alphbetical
+
+      aggregate function:
+        max, sum, min, avg, count
+
+      alias:
+        as syntax to convert the column name
+
+      group by:
+        aggregate function by combing row with condition
+        Reference: https://sqlbolt.com/lesson/select_queries_with_aggregates
+
+        how many movies each director has directed
+          SELECT count(Title), Director as Movies_Count FROM movies GROUP BY Director;
+        
+        how many minutes each director has directed
+
+    
+    insert a record:
+      INSERT INTO tablename
+      (column, another_column, …)
+      VALUES (value_or_expr, another_value_or_expr, …),
+            (value_or_expr_2, another_value_or_expr_2, …),
+            …;
+    
+    UPDATE:
+      UPDATE mytable
+      SET column = value_or_expr, 
+          other_column = another_value_or_expr, 
+          …
+      WHERE condition;
+
+      change director for a movie
+
+      update movies set Director='John Lasseter' where Title="A Bug's Life";
+
+    DELETE Row from table:
+      DELETE FROM mytable
+      WHERE condition;
+
+Task:
+  Complete SQL Bolt, And submit the screenshots ( Complete all except Lessons 6,7,8,9 & 12(only Second Question) )
+  Reason: Joins are not discussed Yet
+
+Next Session:
+  Joins in SQL
+  
